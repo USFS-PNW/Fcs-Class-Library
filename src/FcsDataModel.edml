@@ -1,0 +1,137 @@
+﻿<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FcsClassLibrary.Store" Alias="Self" Provider="Devart.Data.Oracle" ProviderManifestToken="Ora11g" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:devart="http://devart.com/schemas/edml/StorageSchemaExtensions/1.0" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="FCS_EntitiesStoreContainer">
+          <EntitySet Name="BIOSUM_VOLUMEs" EntityType="FcsClassLibrary.Store.BIOSUM_VOLUME" store:Type="Tables" Schema="FCS" Table="BIOSUM_VOLUME" />
+        </EntityContainer>
+        <EntityType Name="BIOSUM_VOLUME">
+          <Key>
+            <PropertyRef Name="TRE_CN" />
+          </Key>
+          <Property Name="STATECD" Type="int" Nullable="false" />
+          <Property Name="COUNTYCD" Type="int" Nullable="false" />
+          <Property Name="PLOT" Type="int" Nullable="false" />
+          <Property Name="TREE" Type="int" Nullable="false" />
+          <Property Name="INVYR" Type="int" Nullable="false" />
+          <Property Name="VOL_LOC_GRP" Type="VARCHAR2" MaxLength="200" />
+          <Property Name="SPCD" Type="decimal" />
+          <Property Name="DIA" Type="double" />
+          <Property Name="HT" Type="int" />
+          <Property Name="ACTUALHT" Type="int" />
+          <Property Name="TRE_CN" Type="VARCHAR2" Nullable="false" MaxLength="34" />
+          <Property Name="PLT_CN" Type="VARCHAR2" Nullable="false" MaxLength="34" />
+          <Property Name="CND_CN" Type="VARCHAR2" Nullable="false" MaxLength="34" />
+          <Property Name="CR" Type="int" />
+          <Property Name="STATUSCD" Type="int16" Nullable="false" />
+          <Property Name="TREECLCD" Type="int" />
+          <Property Name="ROUGHCULL" Type="int" />
+          <Property Name="CULL" Type="int" />
+          <Property Name="VOLCFGRS_CALC" Type="double" />
+          <Property Name="VOLCSGRS_CALC" Type="double" />
+          <Property Name="VOLCFNET_CALC" Type="double" />
+          <Property Name="DRYBIOM_CALC" Type="double" />
+          <Property Name="DRYBIOT_CALC" Type="double" />
+        </EntityType>
+        <Function Name="COMP_BIOSUM_VOLS_BY_CURSOR" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FCS" StoreFunctionName="COMPUTE_BIOSUM_VOLUMES_PKG.COMP_BIOSUM_VOLS_BY_CURSOR" />
+        <Function Name="COMP_BIOSUM_VOLS_BY_UPDATE" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FCS" StoreFunctionName="COMPUTE_BIOSUM_VOLUMES_PKG.COMP_BIOSUM_VOLS_BY_UPDATE" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FcsClassLibrary" Alias="Self" d4p1:ViewGeneration="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:devart="http://devart.com/schemas/edml/ConceptualSchemaExtensions/1.0" xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" xmlns:d4p1="http://devart.com/schemas/edml/ConceptualSchemaExtensions/1.0" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="FCS_Entities" annotation:LazyLoadingEnabled="true" ed:Guid="8a09aef7-2500-4366-a6a0-2f5545084e0a">
+          <EntitySet Name="BIOSUM_VOLUMEs" EntityType="FcsClassLibrary.BIOSUM_VOLUME" />
+          <FunctionImport Name="COMP_BIOSUM_VOLS_BY_CURSOR" ed:Guid="081b82ea-6baf-4720-9e9b-f006e735bae6" />
+          <FunctionImport Name="COMP_BIOSUM_VOLS_BY_UPDATE" ed:Guid="0e4a451d-ddcd-4433-84dd-79b5135dd798" />
+        </EntityContainer>
+        <EntityType Name="BIOSUM_VOLUME" ed:Guid="3e991730-937e-47a4-b559-4afefcb4aee7">
+          <Key>
+            <PropertyRef Name="TRE_CN" />
+          </Key>
+          <Property Name="STATECD" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="bd4e5da3-564c-4c42-bc48-be219fa12a6e" />
+          <Property Name="COUNTYCD" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="013c1e4f-dc72-4d06-a85e-b8b61761753b" />
+          <Property Name="PLOT" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="21389d5a-5eee-4b91-ae35-f17785e4e9ad" />
+          <Property Name="TREE" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="ad714303-162f-4286-add1-cad73af255a6" />
+          <Property Name="INVYR" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="6e10fe3b-2941-47fa-a89e-2e1679649965" />
+          <Property Name="VOL_LOC_GRP" Type="String" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="False" ed:Guid="193b1d41-9e67-4651-898a-30711bb6303e" />
+          <Property Name="SPCD" Type="Decimal" ed:ValidateRequired="False" ed:Guid="afbd0e07-8684-46de-a4b4-522241fc5a32" />
+          <Property Name="DIA" Type="Double" ed:ValidateRequired="False" ed:Guid="0b548e93-aefa-4237-adf3-a5b83f8d20c0" />
+          <Property Name="HT" Type="Int32" ed:ValidateRequired="False" ed:Guid="44789e47-ad03-485f-b894-019007a634f4" />
+          <Property Name="ACTUALHT" Type="Int32" ed:ValidateRequired="False" ed:Guid="2644e59b-3fc2-42e5-8ac6-b7894db04b91" />
+          <Property Name="TRE_CN" Type="String" Nullable="false" MaxLength="34" ed:ValidateMaxLength="34" ed:ValidateRequired="True" ed:Guid="89d7401f-b5a6-4e18-9cfd-4f65c5839197" />
+          <Property Name="PLT_CN" Type="String" Nullable="false" MaxLength="34" ed:ValidateMaxLength="34" ed:ValidateRequired="True" ed:Guid="c9616d9f-7ed0-4aec-b3c7-f311465ee468" />
+          <Property Name="CND_CN" Type="String" Nullable="false" MaxLength="34" ed:ValidateMaxLength="34" ed:ValidateRequired="True" ed:Guid="40249bdd-245c-4b92-9ca7-8830bb37ef60" />
+          <Property Name="CR" Type="Int32" ed:ValidateRequired="False" ed:Guid="cdddae34-02c8-48f2-8580-15ce656633d4" />
+          <Property Name="STATUSCD" Type="Int16" Nullable="false" ed:ValidateRequired="True" ed:Guid="3ccdfe4e-8f5e-4f35-9ec6-8a0ee6581928" />
+          <Property Name="TREECLCD" Type="Int32" ed:ValidateRequired="False" ed:Guid="49dea1b9-1169-4bfd-91f7-ea78c49da81c" />
+          <Property Name="ROUGHCULL" Type="Int32" ed:ValidateRequired="False" ed:Guid="dd32833d-cfab-4460-b162-c165b3b5f4f7" />
+          <Property Name="CULL" Type="Int32" ed:ValidateRequired="False" ed:Guid="5c2a2bf9-b95a-4e46-8a9f-464242d31ef0" />
+          <Property Name="VOLCFGRS_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="f9540929-c324-4257-a6b2-31f13777892f" />
+          <Property Name="VOLCSGRS_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="38f564b0-a90f-4854-a43b-3ae3c2de490b" />
+          <Property Name="VOLCFNET_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="68646be0-0cac-4a3d-b078-f82a5af052d0" />
+          <Property Name="DRYBIOM_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="6c551fcd-23f3-4ec1-8d0b-44cc415cc2f6" />
+          <Property Name="DRYBIOT_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="dbfb2e77-8a78-4451-a4c0-b97f7c0ff817" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- MSL content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FCS_EntitiesStoreContainer" CdmEntityContainer="FCS_Entities">
+          <EntitySetMapping Name="BIOSUM_VOLUMEs">
+            <EntityTypeMapping TypeName="FcsClassLibrary.BIOSUM_VOLUME">
+              <MappingFragment StoreEntitySet="BIOSUM_VOLUMEs">
+                <ScalarProperty Name="STATECD" ColumnName="STATECD" />
+                <ScalarProperty Name="COUNTYCD" ColumnName="COUNTYCD" />
+                <ScalarProperty Name="INVYR" ColumnName="INVYR" />
+                <ScalarProperty Name="VOL_LOC_GRP" ColumnName="VOL_LOC_GRP" />
+                <ScalarProperty Name="SPCD" ColumnName="SPCD" />
+                <ScalarProperty Name="DIA" ColumnName="DIA" />
+                <ScalarProperty Name="HT" ColumnName="HT" />
+                <ScalarProperty Name="ACTUALHT" ColumnName="ACTUALHT" />
+                <ScalarProperty Name="CR" ColumnName="CR" />
+                <ScalarProperty Name="STATUSCD" ColumnName="STATUSCD" />
+                <ScalarProperty Name="TREECLCD" ColumnName="TREECLCD" />
+                <ScalarProperty Name="ROUGHCULL" ColumnName="ROUGHCULL" />
+                <ScalarProperty Name="CULL" ColumnName="CULL" />
+                <ScalarProperty Name="VOLCFGRS_CALC" ColumnName="VOLCFGRS_CALC" />
+                <ScalarProperty Name="VOLCSGRS_CALC" ColumnName="VOLCSGRS_CALC" />
+                <ScalarProperty Name="VOLCFNET_CALC" ColumnName="VOLCFNET_CALC" />
+                <ScalarProperty Name="DRYBIOM_CALC" ColumnName="DRYBIOM_CALC" />
+                <ScalarProperty Name="DRYBIOT_CALC" ColumnName="DRYBIOT_CALC" />
+                <ScalarProperty Name="PLOT" ColumnName="PLOT" />
+                <ScalarProperty Name="TREE" ColumnName="TREE" />
+                <ScalarProperty Name="TRE_CN" ColumnName="TRE_CN" />
+                <ScalarProperty Name="PLT_CN" ColumnName="PLT_CN" />
+                <ScalarProperty Name="CND_CN" ColumnName="CND_CN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="COMP_BIOSUM_VOLS_BY_CURSOR" FunctionName="FcsClassLibrary.Store.COMP_BIOSUM_VOLS_BY_CURSOR" />
+          <FunctionImportMapping FunctionImportName="COMP_BIOSUM_VOLS_BY_UPDATE" FunctionName="FcsClassLibrary.Store.COMP_BIOSUM_VOLS_BY_UPDATE" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <edmx:Diagrams>
+      <Diagram Name="Main" />
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

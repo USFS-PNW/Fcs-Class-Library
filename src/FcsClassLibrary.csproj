@@ -45,8 +45,7 @@
     </Reference>
     <Reference Include="Devart.Data.Oracle.Entity, Version=8.3.146.6, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files (x86)\Devart\dotConnect\Oracle\Entity\EF6\Devart.Data.Oracle.Entity.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\..\..\Program Files (x86)\Devart\dotConnect\Oracle\Entity\EF4\Devart.Data.Oracle.Entity.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
       <HintPath>packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>

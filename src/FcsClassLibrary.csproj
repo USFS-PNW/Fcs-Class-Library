@@ -81,6 +81,9 @@
     <Compile Include="FCS_GET_VOLCSGRS.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FCS_GET_VOLTSGRS.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -97,7 +100,6 @@
     </DevartEntityDeploy>
     <None Include="FcsDataModel.edps">
       <DependentUpon>FcsDataModel.edml</DependentUpon>
-      <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

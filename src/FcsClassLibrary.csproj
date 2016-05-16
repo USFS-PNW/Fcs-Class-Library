@@ -33,21 +33,14 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Devart.Data, Version=5.0.938.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\Devart.Data.dll</HintPath>
+    <Reference Include="Devart.Data, Version=5.0.938.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data.Oracle, Version=8.3.146.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data.Oracle.Entity, Version=8.3.146.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Devart\dotConnect\Oracle\Entity\EF4\Devart.Data.Oracle.Entity.dll</HintPath>
     </Reference>
-    <Reference Include="Devart.Data.Oracle, Version=8.3.146.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\Devart.Data.Oracle.dll</HintPath>
-    </Reference>
-    <Reference Include="Devart.Data.Oracle.Entity, Version=8.3.146.6, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\Devart.Data.Oracle.Entity.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -61,10 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FcsDataModel.Designer.cs">
+    <Compile Include="FCSDataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FcsDataModel.edml</DependentUpon>
+      <DependentUpon>FCSDataModel.edml</DependentUpon>
     </Compile>
     <Compile Include="FCS_GET_DRYBIOM.cs">
       <SubType>Component</SubType>
@@ -91,17 +84,16 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="FcsDataModel.Diagram1.view">
-      <DependentUpon>FcsDataModel.edml</DependentUpon>
+    <None Include="FCSDataModel.Diagram1.view">
+      <DependentUpon>FCSDataModel.edml</DependentUpon>
     </None>
-    <DevartEntityDeploy Include="FcsDataModel.edml">
+    <DevartEntityDeploy Include="FCSDataModel.edml">
       <Generator>DevartEfGenerator</Generator>
-      <LastGenOutput>FcsDataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>FCSDataModel.Designer.cs</LastGenOutput>
     </DevartEntityDeploy>
-    <None Include="FcsDataModel.edps">
-      <DependentUpon>FcsDataModel.edml</DependentUpon>
+    <None Include="FCSDataModel.edps">
+      <DependentUpon>FCSDataModel.edml</DependentUpon>
     </None>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />

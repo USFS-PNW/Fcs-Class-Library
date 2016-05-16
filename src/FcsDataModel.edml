@@ -43,39 +43,39 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FcsClassLibrary" Alias="Self" d4p1:ViewGeneration="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:devart="http://devart.com/schemas/edml/ConceptualSchemaExtensions/1.0" xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" xmlns:d4p1="http://devart.com/schemas/edml/ConceptualSchemaExtensions/1.0" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="FCS_Entities" annotation:LazyLoadingEnabled="true" ed:Guid="2d346ed7-1b15-477e-851d-520a5ec0e332">
+        <EntityContainer Name="FCS_Entities" annotation:LazyLoadingEnabled="true" ed:Guid="8035277e-fd4d-494d-b19b-375d6464eef4">
           <EntitySet Name="BIOSUM_VOLUMEs" EntityType="FcsClassLibrary.BIOSUM_VOLUME" />
-          <FunctionImport Name="COMP_BIOSUM_VOLS_BY_CURSOR" ed:Guid="ffa93ffa-947b-4348-b824-8a173b73caf2" />
-          <FunctionImport Name="COMP_BIOSUM_VOLS_BY_UPDATE" ed:Guid="6f9e63c7-35bc-4e90-812c-00bc71d1cfe9" />
+          <FunctionImport Name="COMP_BIOSUM_VOLS_BY_CURSOR" ed:Guid="4b1f5f97-88b0-4bab-b80d-8f3966b45f24" />
+          <FunctionImport Name="COMP_BIOSUM_VOLS_BY_UPDATE" ed:Guid="8c7d477a-dd7b-44f5-8ea8-66af5f96b2e1" />
         </EntityContainer>
-        <EntityType Name="BIOSUM_VOLUME" ed:Guid="1f3a948c-685a-4931-9e8e-eaffbcf4687a">
+        <EntityType Name="BIOSUM_VOLUME" ed:Guid="883f0ffd-7844-472e-9bcb-26e031dbdea6">
           <Key>
             <PropertyRef Name="TRE_CN" />
           </Key>
-          <Property Name="STATECD" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="ada5df1a-d68c-48e2-8d93-e453cedd4d6a" />
-          <Property Name="COUNTYCD" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="a6debead-64f1-4f1d-930b-0ce3cbf440d9" />
-          <Property Name="PLOT" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="ee4d4cd5-f962-4523-908d-f09cfa9f6577" />
-          <Property Name="INVYR" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="b46ee0ad-d71a-43c5-bbcb-04f54dbe16bb" />
-          <Property Name="TREE" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="8d55c9f5-b52b-48a6-924e-eaf94971e9a0" />
-          <Property Name="VOL_LOC_GRP" Type="String" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="False" ed:Guid="5a8ba786-d57a-4247-949b-d3cae8f506b4" />
-          <Property Name="SPCD" Type="Decimal" ed:ValidateRequired="False" ed:Guid="9027ba5e-078f-4022-9f9b-058285e5d583" />
-          <Property Name="DIA" Type="Double" ed:ValidateRequired="False" ed:Guid="06d0f383-69f3-4c83-adec-2d1e8dd6132f" />
-          <Property Name="HT" Type="Int32" ed:ValidateRequired="False" ed:Guid="ec5e268e-c262-447c-833e-664e1445e8f2" />
-          <Property Name="ACTUALHT" Type="Int32" ed:ValidateRequired="False" ed:Guid="76eb8068-057a-45d6-8682-0fd12742d46a" />
-          <Property Name="CR" Type="Int32" ed:ValidateRequired="False" ed:Guid="b6093d7c-c430-4b3c-b790-cad6a3eec0ad" />
-          <Property Name="STATUSCD" Type="Int16" Nullable="false" ed:ValidateRequired="True" ed:Guid="0fb78bcc-9793-4cfd-be2a-1bb654b010d2" />
-          <Property Name="TREECLCD" Type="Int32" ed:ValidateRequired="False" ed:Guid="4902352a-7c1c-4ca9-b2e9-47a8368e51d4" />
-          <Property Name="ROUGHCULL" Type="Int32" ed:ValidateRequired="False" ed:Guid="a4c3d7c2-9194-4449-a088-f797a561a51e" />
-          <Property Name="CULL" Type="Int32" ed:ValidateRequired="False" ed:Guid="95f4fadc-2199-4002-b6e8-8fd85c1fc4d3" />
-          <Property Name="TRE_CN" Type="String" Nullable="false" MaxLength="34" ed:ValidateMaxLength="34" ed:ValidateRequired="True" ed:Guid="bf3e987d-0e9a-4895-ae62-3d1db7ef30c3" />
-          <Property Name="PLT_CN" Type="String" Nullable="false" MaxLength="34" ed:ValidateMaxLength="34" ed:ValidateRequired="True" ed:Guid="e3bbf595-f338-4fc8-906b-2617c27ff6ad" />
-          <Property Name="CND_CN" Type="String" Nullable="false" MaxLength="34" ed:ValidateMaxLength="34" ed:ValidateRequired="True" ed:Guid="4d202474-d94a-4cd5-893c-d24b893f8409" />
-          <Property Name="VOLCFGRS_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="b2413c10-c544-43b1-b9c3-67fe54815c88" />
-          <Property Name="VOLCSGRS_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="5b2e1fb6-c2b7-479d-899d-56692130be32" />
-          <Property Name="VOLCFNET_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="a1cc9a8d-3cf2-451e-a3c7-6eb289096685" />
-          <Property Name="DRYBIOM_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="d6d57018-d338-444e-b450-29e8595c332b" />
-          <Property Name="DRYBIOT_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="2f416178-ee66-484b-8a72-88a9ee145b22" />
-          <Property Name="VOLTSGRS_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="e879ec0c-e12e-4f84-8190-a56c8e066392" />
+          <Property Name="STATECD" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="36a96284-7a5b-4737-9037-c795dccf5aaa" />
+          <Property Name="COUNTYCD" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="92cceca3-5aab-45e3-aaae-4fad2d14d492" />
+          <Property Name="PLOT" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="8579e20b-8518-4ddf-864f-46ff2979ac2b" />
+          <Property Name="INVYR" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="1abaad97-b434-4039-a616-045151916de4" />
+          <Property Name="TREE" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="c04eaaef-216c-41cc-8240-3c6bab6331af" />
+          <Property Name="VOL_LOC_GRP" Type="String" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="False" ed:Guid="b7f8108f-be16-4adf-8f72-d960a37e4d16" />
+          <Property Name="SPCD" Type="Decimal" ed:ValidateRequired="False" ed:Guid="a05a3ba9-6bcd-428d-9745-5dc70b923384" />
+          <Property Name="DIA" Type="Double" ed:ValidateRequired="False" ed:Guid="af450dde-414d-4d04-9e15-c0a1aceba489" />
+          <Property Name="HT" Type="Int32" ed:ValidateRequired="False" ed:Guid="3c7e5af1-63dc-4f03-a4fa-8c5a1cc695ea" />
+          <Property Name="ACTUALHT" Type="Int32" ed:ValidateRequired="False" ed:Guid="cda66683-215f-4632-8040-9f7b18cf53a9" />
+          <Property Name="CR" Type="Int32" ed:ValidateRequired="False" ed:Guid="ad713fde-bb0b-4484-a58d-40eb5b852b00" />
+          <Property Name="STATUSCD" Type="Int16" Nullable="false" ed:ValidateRequired="True" ed:Guid="433d7f79-8cdb-4f5c-9d7c-621175d9e515" />
+          <Property Name="TREECLCD" Type="Int32" ed:ValidateRequired="False" ed:Guid="3637e609-8bd9-4bd8-8ae8-4a1caceedd49" />
+          <Property Name="ROUGHCULL" Type="Int32" ed:ValidateRequired="False" ed:Guid="6a5338b8-669c-4094-abfd-9785bd7f7493" />
+          <Property Name="CULL" Type="Int32" ed:ValidateRequired="False" ed:Guid="aef7aa4e-ce04-4ad8-9fe1-8bda35897028" />
+          <Property Name="TRE_CN" Type="String" Nullable="false" MaxLength="34" ed:ValidateMaxLength="34" ed:ValidateRequired="True" ed:Guid="fdb3c7dc-cf83-4304-9d12-1f056bcced59" />
+          <Property Name="PLT_CN" Type="String" Nullable="false" MaxLength="34" ed:ValidateMaxLength="34" ed:ValidateRequired="True" ed:Guid="b54c4ab7-84a0-4825-84b1-e67e254f2cdf" />
+          <Property Name="CND_CN" Type="String" Nullable="false" MaxLength="34" ed:ValidateMaxLength="34" ed:ValidateRequired="True" ed:Guid="d2c6839a-03ae-4a07-bd3f-b84db240059c" />
+          <Property Name="VOLCFGRS_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="2c4af372-914a-4c0d-acbe-1abe0f7102ef" />
+          <Property Name="VOLCSGRS_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="651faa56-deed-453d-9b4f-3d6e707f50d0" />
+          <Property Name="VOLCFNET_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="bb324007-23b0-4fee-a100-d2b381bd4b15" />
+          <Property Name="DRYBIOM_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="4e0c55f7-f1c3-4be5-afac-6c229b4734ca" />
+          <Property Name="DRYBIOT_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="4fdcf591-2099-44cc-88a9-c4c00a83911d" />
+          <Property Name="VOLTSGRS_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="a4f983a4-9f5f-4483-ad37-f0923296c5c6" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>

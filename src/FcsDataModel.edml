@@ -5,7 +5,7 @@
     <edmx:StorageModels>
       <Schema Namespace="FcsClassLibrary.Store" Alias="Self" Provider="Devart.Data.Oracle" ProviderManifestToken="Oracle, 11.2.0.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:devart="http://devart.com/schemas/edml/StorageSchemaExtensions/1.0" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="FCS_EntitiesStoreContainer">
-          <EntitySet Name="BIOSUM_VOLUMEs" EntityType="FcsClassLibrary.Store.BIOSUM_VOLUME" store:Type="Tables" Schema="FCS" Table="BIOSUM_VOLUME" />
+          <EntitySet Name="BIOSUM_VOLUMEs" EntityType="FcsClassLibrary.Store.BIOSUM_VOLUME" store:Type="Tables" Schema="FCS_BIOSUM" Table="BIOSUM_VOLUME" />
         </EntityContainer>
         <EntityType Name="BIOSUM_VOLUME">
           <Key>
@@ -23,9 +23,11 @@
           <Property Name="ACTUALHT" Type="int" />
           <Property Name="CR" Type="int" />
           <Property Name="STATUSCD" Type="int16" Nullable="false" />
+          <Property Name="DECAYCD" Type="int" />
           <Property Name="TREECLCD" Type="int" />
           <Property Name="ROUGHCULL" Type="int" />
           <Property Name="CULL" Type="int" />
+          <Property Name="TOTAGE" Type="double" />
           <Property Name="TRE_CN" Type="VARCHAR2" Nullable="false" MaxLength="34" />
           <Property Name="PLT_CN" Type="VARCHAR2" Nullable="false" MaxLength="34" />
           <Property Name="CND_CN" Type="VARCHAR2" Nullable="false" MaxLength="34" />
@@ -36,46 +38,50 @@
           <Property Name="DRYBIOT_CALC" Type="double" />
           <Property Name="VOLTSGRS_CALC" Type="double" />
         </EntityType>
-        <Function Name="COMP_BIOSUM_VOLS_BY_CURSOR" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FCS" StoreFunctionName="COMPUTE_BIOSUM_VOLUMES_PKG.COMP_BIOSUM_VOLS_BY_CURSOR" />
-        <Function Name="COMP_BIOSUM_VOLS_BY_UPDATE" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FCS" StoreFunctionName="COMPUTE_BIOSUM_VOLUMES_PKG.COMP_BIOSUM_VOLS_BY_UPDATE" />
+        <Function Name="COMPUTE_BIOSUM_VOLUMES_PKG" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FCS_BIOSUM" StoreFunctionName="COMPUTE_BIOSUM_VOLUMES_PKG" />
+        <Function Name="COMP_BIOSUM_VOLS_BY_CURSOR" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FCS_BIOSUM" StoreFunctionName="COMPUTE_BIOSUM_VOLUMES_PKG.COMP_BIOSUM_VOLS_BY_CURSOR" />
+        <Function Name="COMP_BIOSUM_VOLS_BY_UPDATE" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FCS_BIOSUM" StoreFunctionName="COMPUTE_BIOSUM_VOLUMES_PKG.COMP_BIOSUM_VOLS_BY_UPDATE" />
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FcsClassLibrary" Alias="Self" d4p1:ViewGeneration="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:devart="http://devart.com/schemas/edml/ConceptualSchemaExtensions/1.0" xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" xmlns:d4p1="http://devart.com/schemas/edml/ConceptualSchemaExtensions/1.0" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="FCS_Entities" annotation:LazyLoadingEnabled="true" ed:Guid="8035277e-fd4d-494d-b19b-375d6464eef4">
+        <EntityContainer Name="FCS_Entities" annotation:LazyLoadingEnabled="true" ed:Guid="9d76c85b-df18-4ece-8e00-4c9a71fc6ce5">
           <EntitySet Name="BIOSUM_VOLUMEs" EntityType="FcsClassLibrary.BIOSUM_VOLUME" />
-          <FunctionImport Name="COMP_BIOSUM_VOLS_BY_CURSOR" ed:Guid="4b1f5f97-88b0-4bab-b80d-8f3966b45f24" />
-          <FunctionImport Name="COMP_BIOSUM_VOLS_BY_UPDATE" ed:Guid="8c7d477a-dd7b-44f5-8ea8-66af5f96b2e1" />
+          <FunctionImport Name="COMPUTE_BIOSUM_VOLUMES_PKG" ed:Guid="68dc0ad2-6d73-4977-8869-c5ac97c2576f" />
+          <FunctionImport Name="COMP_BIOSUM_VOLS_BY_CURSOR" ed:Guid="a2180cf1-25c4-489a-9d78-ddb8a4457d21" />
+          <FunctionImport Name="COMP_BIOSUM_VOLS_BY_UPDATE" ed:Guid="2f12ae74-6beb-4ed0-a70a-23cf4ce6dccf" />
         </EntityContainer>
-        <EntityType Name="BIOSUM_VOLUME" ed:Guid="883f0ffd-7844-472e-9bcb-26e031dbdea6">
+        <EntityType Name="BIOSUM_VOLUME" ed:Guid="0d725517-1dfc-464b-948d-425f13819842">
           <Key>
             <PropertyRef Name="TRE_CN" />
           </Key>
-          <Property Name="STATECD" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="36a96284-7a5b-4737-9037-c795dccf5aaa" />
-          <Property Name="COUNTYCD" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="92cceca3-5aab-45e3-aaae-4fad2d14d492" />
-          <Property Name="PLOT" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="8579e20b-8518-4ddf-864f-46ff2979ac2b" />
-          <Property Name="INVYR" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="1abaad97-b434-4039-a616-045151916de4" />
-          <Property Name="TREE" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="c04eaaef-216c-41cc-8240-3c6bab6331af" />
-          <Property Name="VOL_LOC_GRP" Type="String" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="False" ed:Guid="b7f8108f-be16-4adf-8f72-d960a37e4d16" />
-          <Property Name="SPCD" Type="Decimal" ed:ValidateRequired="False" ed:Guid="a05a3ba9-6bcd-428d-9745-5dc70b923384" />
-          <Property Name="DIA" Type="Double" ed:ValidateRequired="False" ed:Guid="af450dde-414d-4d04-9e15-c0a1aceba489" />
-          <Property Name="HT" Type="Int32" ed:ValidateRequired="False" ed:Guid="3c7e5af1-63dc-4f03-a4fa-8c5a1cc695ea" />
-          <Property Name="ACTUALHT" Type="Int32" ed:ValidateRequired="False" ed:Guid="cda66683-215f-4632-8040-9f7b18cf53a9" />
-          <Property Name="CR" Type="Int32" ed:ValidateRequired="False" ed:Guid="ad713fde-bb0b-4484-a58d-40eb5b852b00" />
-          <Property Name="STATUSCD" Type="Int16" Nullable="false" ed:ValidateRequired="True" ed:Guid="433d7f79-8cdb-4f5c-9d7c-621175d9e515" />
-          <Property Name="TREECLCD" Type="Int32" ed:ValidateRequired="False" ed:Guid="3637e609-8bd9-4bd8-8ae8-4a1caceedd49" />
-          <Property Name="ROUGHCULL" Type="Int32" ed:ValidateRequired="False" ed:Guid="6a5338b8-669c-4094-abfd-9785bd7f7493" />
-          <Property Name="CULL" Type="Int32" ed:ValidateRequired="False" ed:Guid="aef7aa4e-ce04-4ad8-9fe1-8bda35897028" />
-          <Property Name="TRE_CN" Type="String" Nullable="false" MaxLength="34" ed:ValidateMaxLength="34" ed:ValidateRequired="True" ed:Guid="fdb3c7dc-cf83-4304-9d12-1f056bcced59" />
-          <Property Name="PLT_CN" Type="String" Nullable="false" MaxLength="34" ed:ValidateMaxLength="34" ed:ValidateRequired="True" ed:Guid="b54c4ab7-84a0-4825-84b1-e67e254f2cdf" />
-          <Property Name="CND_CN" Type="String" Nullable="false" MaxLength="34" ed:ValidateMaxLength="34" ed:ValidateRequired="True" ed:Guid="d2c6839a-03ae-4a07-bd3f-b84db240059c" />
-          <Property Name="VOLCFGRS_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="2c4af372-914a-4c0d-acbe-1abe0f7102ef" />
-          <Property Name="VOLCSGRS_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="651faa56-deed-453d-9b4f-3d6e707f50d0" />
-          <Property Name="VOLCFNET_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="bb324007-23b0-4fee-a100-d2b381bd4b15" />
-          <Property Name="DRYBIOM_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="4e0c55f7-f1c3-4be5-afac-6c229b4734ca" />
-          <Property Name="DRYBIOT_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="4fdcf591-2099-44cc-88a9-c4c00a83911d" />
-          <Property Name="VOLTSGRS_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="a4f983a4-9f5f-4483-ad37-f0923296c5c6" />
+          <Property Name="STATECD" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="570faa5b-8aa5-4f2f-816f-893f2b66ce02" />
+          <Property Name="COUNTYCD" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="b494f4a3-2045-4338-aa60-9ef52ef012e1" />
+          <Property Name="PLOT" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="3a51b98b-7f88-427c-a0f1-d20565bea4d2" />
+          <Property Name="INVYR" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="4069cd8f-ed28-4fd0-b4ea-d8c39bd52699" />
+          <Property Name="TREE" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="ce465707-8670-4ab0-9718-917372ac3117" />
+          <Property Name="VOL_LOC_GRP" Type="String" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="False" ed:Guid="653f55bd-ada8-41e0-a953-e80ae50bf382" />
+          <Property Name="SPCD" Type="Decimal" ed:ValidateRequired="False" ed:Guid="68b79f7a-bd6d-4e2b-b682-c99f62a47b75" />
+          <Property Name="DIA" Type="Double" ed:ValidateRequired="False" ed:Guid="1ecb9b1e-c015-4c62-bc2e-34ca3d3f0497" />
+          <Property Name="HT" Type="Int32" ed:ValidateRequired="False" ed:Guid="f8bb5956-4d1b-4e80-a06a-981bb6709c32" />
+          <Property Name="ACTUALHT" Type="Int32" ed:ValidateRequired="False" ed:Guid="2b5fcdcb-cade-43b2-9550-9f261e6aca70" />
+          <Property Name="CR" Type="Int32" ed:ValidateRequired="False" ed:Guid="564f7bec-4d77-418f-88f3-cca651044c37" />
+          <Property Name="STATUSCD" Type="Int16" Nullable="false" ed:ValidateRequired="True" ed:Guid="bf5ec259-ed35-4d98-bfe8-97d5b9028913" />
+          <Property Name="DECAYCD" Type="Int32" ed:ValidateRequired="False" ed:Guid="dba7e7c5-4687-41fa-9f35-24c21d080605" />
+          <Property Name="TREECLCD" Type="Int32" ed:ValidateRequired="False" ed:Guid="9d521cd2-972e-43ff-9098-429c59974c8f" />
+          <Property Name="ROUGHCULL" Type="Int32" ed:ValidateRequired="False" ed:Guid="76b8d81e-f1ea-4758-8007-6ae76dabf27f" />
+          <Property Name="CULL" Type="Int32" ed:ValidateRequired="False" ed:Guid="d3581ff2-26bc-474f-9a99-0daef5d527ae" />
+          <Property Name="TOTAGE" Type="Double" ed:ValidateRequired="False" ed:Guid="7477ccc3-3af0-4215-bc8a-63ccdf2a2071" />
+          <Property Name="TRE_CN" Type="String" Nullable="false" MaxLength="34" ed:ValidateMaxLength="34" ed:ValidateRequired="True" ed:Guid="583dfd35-0a74-450b-bbce-f1c7f14f544f" />
+          <Property Name="PLT_CN" Type="String" Nullable="false" MaxLength="34" ed:ValidateMaxLength="34" ed:ValidateRequired="True" ed:Guid="3f175846-0f61-4cd7-99ec-83dd041344c2" />
+          <Property Name="CND_CN" Type="String" Nullable="false" MaxLength="34" ed:ValidateMaxLength="34" ed:ValidateRequired="True" ed:Guid="eb1374c4-1c70-401f-bc3e-c1d164319c71" />
+          <Property Name="VOLCFGRS_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="46c04843-308e-4cfb-897b-c381edbb60c1" />
+          <Property Name="VOLCSGRS_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="95c38190-f764-483b-ae4b-fedd7123ec37" />
+          <Property Name="VOLCFNET_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="43890e01-9e7c-499c-8b0c-e13e054c2ee9" />
+          <Property Name="DRYBIOM_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="2d2c973e-abba-40a0-826b-8ebf1476dcc7" />
+          <Property Name="DRYBIOT_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="809902b2-9ba9-4f6b-b133-d2a40e6ec841" />
+          <Property Name="VOLTSGRS_CALC" Type="Double" ed:ValidateRequired="False" ed:Guid="12b0ebcb-d0ad-40b3-b45e-45096ab569f4" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -98,9 +104,11 @@
                 <ScalarProperty Name="ACTUALHT" ColumnName="ACTUALHT" />
                 <ScalarProperty Name="CR" ColumnName="CR" />
                 <ScalarProperty Name="STATUSCD" ColumnName="STATUSCD" />
+                <ScalarProperty Name="DECAYCD" ColumnName="DECAYCD" />
                 <ScalarProperty Name="TREECLCD" ColumnName="TREECLCD" />
                 <ScalarProperty Name="ROUGHCULL" ColumnName="ROUGHCULL" />
                 <ScalarProperty Name="CULL" ColumnName="CULL" />
+                <ScalarProperty Name="TOTAGE" ColumnName="TOTAGE" />
                 <ScalarProperty Name="TRE_CN" ColumnName="TRE_CN" />
                 <ScalarProperty Name="PLT_CN" ColumnName="PLT_CN" />
                 <ScalarProperty Name="CND_CN" ColumnName="CND_CN" />
@@ -113,6 +121,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="COMPUTE_BIOSUM_VOLUMES_PKG" FunctionName="FcsClassLibrary.Store.COMPUTE_BIOSUM_VOLUMES_PKG" />
           <FunctionImportMapping FunctionImportName="COMP_BIOSUM_VOLS_BY_CURSOR" FunctionName="FcsClassLibrary.Store.COMP_BIOSUM_VOLS_BY_CURSOR" />
           <FunctionImportMapping FunctionImportName="COMP_BIOSUM_VOLS_BY_UPDATE" FunctionName="FcsClassLibrary.Store.COMP_BIOSUM_VOLS_BY_UPDATE" />
         </EntityContainerMapping>

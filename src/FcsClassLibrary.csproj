@@ -38,8 +38,9 @@
     <Reference Include="Devart.Data.Oracle.Entity, Version=8.3.146.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Devart\dotConnect\Oracle\Entity\EF4\Devart.Data.Oracle.Entity.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Fia-Biosum-Manager\src\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -53,10 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FCSDataModel.Designer.cs">
+    <Compile Include="FcsDataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FCSDataModel.edml</DependentUpon>
+      <DependentUpon>FcsDataModel.edml</DependentUpon>
     </Compile>
     <Compile Include="FCS_GET_DRYBIOM.cs">
       <SubType>Component</SubType>
@@ -83,19 +84,25 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="FCSDataModel.Diagram1.view">
-      <DependentUpon>FCSDataModel.edml</DependentUpon>
+    <None Include="FcsDataModel.Diagram1.view">
+      <DependentUpon>FcsDataModel.edml</DependentUpon>
     </None>
-    <DevartEntityDeploy Include="FCSDataModel.edml">
+    <DevartEntityDeploy Include="FcsDataModel.edml">
       <Generator>DevartEfGenerator</Generator>
-      <LastGenOutput>FCSDataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>FcsDataModel.Designer.cs</LastGenOutput>
     </DevartEntityDeploy>
-    <None Include="FCSDataModel.edps">
-      <DependentUpon>FCSDataModel.edml</DependentUpon>
+    <None Include="FcsDataModel.edps">
+      <DependentUpon>FcsDataModel.edml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

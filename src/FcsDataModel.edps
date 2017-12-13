@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EntityDeveloper Version="5.7.342.0">
-  <ModelSettings xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" AppConnectionStringName="FCS_Entities_ConnectionString" ConnectionStringInAppConfig="True" RegenareteConnectionStringInAppConfig="True" TargetFramework="Net40" DetectTPTInheritance="False" EntityFrameworkVersion="Version4" IncludeForeignKeysInModel="true" DetectFunctionBasedColumnDefault="false">
-    <Connection ConnectionString="User Id=fcs;Password=fcs;Server=XE;Persist Security Info=True" Provider="Devart.Data.Oracle" />
+  <ModelSettings xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" AppConnectionStringName="FCS_Entities_ConnectionString" ConnectionStringInAppConfig="True" RegenareteConnectionStringInAppConfig="True" TargetFramework="Net40" DetectTPTInheritance="False" EntityFrameworkVersion="Version4" IncludeForeignKeysInModel="true" DetectFunctionBasedColumnDefault="true">
+    <Connection ConnectionString="User Id=fcs_biosum;Password=fcs;Server=XE;Persist Security Info=True" Provider="Devart.Data.Oracle" />
     <Generation />
     <DatabaseFirstNamingRules>
       <EntitySet PluralizationName="Pluralize" />
       <Class UseSchemaAsPrefix="False" PluralizeCollectionNavigationPropertyName="True" RemoveUnderscores="False" CodeCase="FirstLetterUppercase" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Singularize" />
       <Property RemoveUnderscores="False" CodeCase="FirstLetterUppercase" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Unchanged" />
     </DatabaseFirstNamingRules>
-    <ModelFirst StorageSynchronizationEnabled="False" TargetSchema="FCS" TargetProviderName="Devart.Data.Oracle">
+    <ModelFirst StorageSynchronizationEnabled="False" TargetSchema="FCS_BIOSUM" TargetProviderName="Devart.Data.Oracle">
       <TargetServer Server="Oracle" ServerVersion="11gR2" />
       <ModelFirstNamingRules>
         <Table RemoveUnderscores="False" CodeCase="Unchanged" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Pluralize" />

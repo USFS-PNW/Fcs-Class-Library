@@ -32,7 +32,7 @@ namespace FcsClassLibrary
             set { _BIOSUM_VOLUME_LIST = value; }
         		
         }
-        private FCSOracle _OracleADO = new FCSOracle();
+        private FCSOracle _OracleADO;
         public FCSOracle OracleADO
         {
             get { return _OracleADO; }

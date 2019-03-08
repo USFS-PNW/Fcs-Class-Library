@@ -36,14 +36,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Devart.Data, Version=5.0.938.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
-    <Reference Include="Devart.Data.Oracle, Version=8.3.146.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
-    <Reference Include="Devart.Data.Oracle.Entity, Version=8.3.146.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Devart\dotConnect\Oracle\Entity\EF4\Devart.Data.Oracle.Entity.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+  	<Reference Include="Oracle.DataAccess, Version=4.112.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Fia-Biosum-Manager\src\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+      <HintPath>C:\oraclexe\app\oracle\product\11.2.0\server\odp.net\bin\4\Oracle.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -57,46 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FcsDataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FcsDataModel.edml</DependentUpon>
-    </Compile>
-    <Compile Include="FCS_GET_DRYBIOM.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="FCS_GET_DRYBIOT.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="FCS_GET_VOLCFGRS.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="FCS_GET_VOLCFNET.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="FCS_GET_VOLCSGRS.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="FCS_GET_VOLTSGRS.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="FCSEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="FcsDataModel.Diagram1.view">
-      <DependentUpon>FcsDataModel.edml</DependentUpon>
-    </None>
-    <DevartEntityDeploy Include="FcsDataModel.edml">
-      <Generator>DevartEfGenerator</Generator>
-      <LastGenOutput>FcsDataModel.Designer.cs</LastGenOutput>
-    </DevartEntityDeploy>
-    <None Include="FcsDataModel.edps">
-      <DependentUpon>FcsDataModel.edml</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -106,6 +63,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ODP\src\ODP.csproj">
+      <Project>{498D58F0-D98C-4B18-AB46-90CDE59592DB}</Project>
+      <Name>ODP</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
-using ODP;
+//using ODP;
 using System.Windows.Forms;
+using Oracle.ADO;
+
 
 namespace FcsClassLibrary
 {
@@ -141,7 +143,12 @@ namespace FcsClassLibrary
 
             }
 
-            catch (Oracle.DataAccess.Client.OracleException errOracle)
+            //catch (Oracle.DataAccess.Client.OracleException errOracle)
+            //{
+            //    m_strError = errOracle.Message;
+            //    m_intError = -1;
+            //}
+            catch (System.Data.OracleClient.OracleException errOracle)
             {
                 m_strError = errOracle.Message;
                 m_intError = -1;
@@ -193,7 +200,8 @@ namespace FcsClassLibrary
 
                 try
                 {
-                    using (Oracle.DataAccess.Client.OracleCommand command = new Oracle.DataAccess.Client.OracleCommand())
+                    //using (Oracle.DataAccess.Client.OracleCommand command = new Oracle.DataAccess.Client.OracleCommand())
+                    using (System.Data.OracleClient.OracleCommand command = new System.Data.OracleClient.OracleCommand())
                     {
                         command.Connection = _OracleADO.m_Connection;
                         command.CommandType = System.Data.CommandType.StoredProcedure;
@@ -246,7 +254,8 @@ namespace FcsClassLibrary
             {
                 try
                 {
-                    using (Oracle.DataAccess.Client.OracleCommand command = new Oracle.DataAccess.Client.OracleCommand())
+                    //using (Oracle.DataAccess.Client.OracleCommand command = new Oracle.DataAccess.Client.OracleCommand())
+                    using (System.Data.OracleClient.OracleCommand command = new System.Data.OracleClient.OracleCommand())
                     {
                         command.Connection = _OracleADO.m_Connection;
                         command.CommandType = System.Data.CommandType.StoredProcedure;
@@ -383,7 +392,8 @@ namespace FcsClassLibrary
             {
 			    try 
                 {
-                    using (Oracle.DataAccess.Client.OracleCommand command = new Oracle.DataAccess.Client.OracleCommand())
+                    //using (Oracle.DataAccess.Client.OracleCommand command = new Oracle.DataAccess.Client.OracleCommand())
+                    using (System.Data.OracleClient.OracleCommand command = new System.Data.OracleClient.OracleCommand())
                     {
                         command.Connection = _OracleADO.m_Connection;
                         command.CommandType = System.Data.CommandType.StoredProcedure;
@@ -580,7 +590,8 @@ namespace FcsClassLibrary
                     }
                 }
             }
-            catch (Oracle.DataAccess.Client.OracleException errOracleADO)
+            //catch (Oracle.DataAccess.Client.OracleException errOracleADO)
+            catch (System.Data.OracleClient.OracleException errOracleADO)
             {
                 m_intError = -1;
                 m_strError = errOracleADO.Message;

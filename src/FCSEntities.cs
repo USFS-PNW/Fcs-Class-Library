@@ -19,6 +19,9 @@ namespace FcsClassLibrary
 
         public static int m_intError = 0;
         public static string m_strError = "";
+
+        
+
         private bool _bDisplayErrors = true;
         public bool DisplayErrors
         {
@@ -166,6 +169,7 @@ namespace FcsClassLibrary
                 }
                 else
                 {
+
                     if (_OracleADO.m_DataSet != null)
                     {
                         _OracleADO.m_DataSet.Tables.Clear();
@@ -205,7 +209,7 @@ namespace FcsClassLibrary
                     {
                         command.Connection = _OracleADO.m_Connection;
                         command.CommandType = System.Data.CommandType.StoredProcedure;
-                        command.CommandText = "FCS_BIOSUM.COMPUTE_BIOSUM_VOLUMES_PKG";
+                        command.CommandText = FCSOracle.FCSSchema + ".COMPUTE_BIOSUM_VOLUMES_PKG";
                         command.ExecuteNonQuery();
                     }
                 }
@@ -259,7 +263,7 @@ namespace FcsClassLibrary
                     {
                         command.Connection = _OracleADO.m_Connection;
                         command.CommandType = System.Data.CommandType.StoredProcedure;
-                        command.CommandText = "FCS_BIOSUM.COMPUTE_BIOSUM_VOLUMES_PKG.COMP_BIOSUM_VOLS_BY_CURSOR";
+                        command.CommandText = FCSOracle.FCSSchema + ".COMPUTE_BIOSUM_VOLUMES_PKG.COMP_BIOSUM_VOLS_BY_CURSOR";
                         command.ExecuteNonQuery();
                     }
                 }
@@ -304,7 +308,7 @@ namespace FcsClassLibrary
             {
                 try
                 {
-                    _OracleADO.SqlNonQuery(_OracleADO.m_Connection,"DELETE FROM BIOSUM_VOLUME");
+                    _OracleADO.SqlNonQuery(_OracleADO.m_Connection,"DELETE FROM " + FCSOracle.FCSSchema + ".BIOSUM_VOLUME");
 
                 }
                 catch (Exception e)
@@ -397,7 +401,7 @@ namespace FcsClassLibrary
                     {
                         command.Connection = _OracleADO.m_Connection;
                         command.CommandType = System.Data.CommandType.StoredProcedure;
-                        command.CommandText = "FCS_BIOSUM.COMPUTE_BIOSUM_VOLUMES_PKG.COMP_BIOSUM_VOLS_BY_UPDATE";
+                        command.CommandText = FCSOracle.FCSSchema +  ".COMPUTE_BIOSUM_VOLUMES_PKG.COMP_BIOSUM_VOLS_BY_UPDATE";
                         command.ExecuteNonQuery();
                     }
                 }
@@ -530,7 +534,7 @@ namespace FcsClassLibrary
         private void BeginTransaction(string p_strTableName, string p_strColumns, string p_strKeyField, int p_intMAXRecords, string p_strWhereCondition)
         {
             _OracleADO.m_Transaction = _OracleADO.m_Connection.BeginTransaction();
-            _OracleADO.InitializeDataAdapter("FCS_BIOSUM", p_strTableName, p_strColumns, p_strKeyField, p_intMAXRecords, p_strWhereCondition);
+            _OracleADO.InitializeDataAdapter(FCSOracle.FCSSchema, p_strTableName, p_strColumns, p_strKeyField, p_intMAXRecords, p_strWhereCondition);
             _OracleADO.m_DataAdapter.AcceptChangesDuringUpdate = false;
             _OracleADO.m_DataAdapter.ContinueUpdateOnError = false;
 

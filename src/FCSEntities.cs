@@ -524,6 +524,62 @@ namespace FcsClassLibrary
             if (p_BIOSUM_VOLUME_ITEM.TOTAGE != null)
                 p_oRow["TOTAGE"] = p_BIOSUM_VOLUME_ITEM.TOTAGE;
 
+            //START: ADDED BIOSUM_VOLUME COLUMNS
+            if (p_BIOSUM_VOLUME_ITEM.SITREE != null)
+                p_oRow["SITREE"] = p_BIOSUM_VOLUME_ITEM.SITREE;
+
+            if (p_BIOSUM_VOLUME_ITEM.WDLDSTEM != null)
+                p_oRow["WDLDSTEM"] = p_BIOSUM_VOLUME_ITEM.WDLDSTEM;
+
+            if (p_BIOSUM_VOLUME_ITEM.UPPER_DIA != null)
+                p_oRow["UPPER_DIA"] = p_BIOSUM_VOLUME_ITEM.UPPER_DIA;
+
+            if (p_BIOSUM_VOLUME_ITEM.UPPER_DIA_HT != null)
+                p_oRow["UPPER_DIA_HT"] = p_BIOSUM_VOLUME_ITEM.UPPER_DIA_HT;
+
+            if (p_BIOSUM_VOLUME_ITEM.CENTROID_DIA != null)
+                p_oRow["CENTROID_DIA"] = p_BIOSUM_VOLUME_ITEM.CENTROID_DIA;
+
+            if (p_BIOSUM_VOLUME_ITEM.CENTROID_DIA_HT_ACTUAL != null)
+                p_oRow["CENTROID_DIA_HT_ACTUAL"] = p_BIOSUM_VOLUME_ITEM.CENTROID_DIA_HT_ACTUAL;
+
+            if (p_BIOSUM_VOLUME_ITEM.SAWHT != null)
+                p_oRow["SAWHT"] = p_BIOSUM_VOLUME_ITEM.SAWHT;
+
+            if (p_BIOSUM_VOLUME_ITEM.HTDMP != null)
+                p_oRow["HTDMP"] = p_BIOSUM_VOLUME_ITEM.HTDMP;
+
+            if (p_BIOSUM_VOLUME_ITEM.BOLEHT != null)
+                p_oRow["BOLEHT"] = p_BIOSUM_VOLUME_ITEM.BOLEHT;
+
+            if (p_BIOSUM_VOLUME_ITEM.CULLCF != null)
+                p_oRow["CULLCF"] = p_BIOSUM_VOLUME_ITEM.CULLCF;
+
+            if (p_BIOSUM_VOLUME_ITEM.CULL_FLD != null)
+                p_oRow["CULL_FLD"] = p_BIOSUM_VOLUME_ITEM.CULL_FLD;
+
+            if (p_BIOSUM_VOLUME_ITEM.CULLDEAD != null)
+                p_oRow["CULLDEAD"] = p_BIOSUM_VOLUME_ITEM.CULLDEAD;
+
+            if (p_BIOSUM_VOLUME_ITEM.CULLFORM != null)
+                p_oRow["CULLFORM"] = p_BIOSUM_VOLUME_ITEM.CULLFORM;
+
+            if (p_BIOSUM_VOLUME_ITEM.CULLMSTOP != null)
+                p_oRow["CULLMSTOP"] = p_BIOSUM_VOLUME_ITEM.CULLMSTOP;
+
+            if (p_BIOSUM_VOLUME_ITEM.CFSND != null)
+                p_oRow["CFSND"] = p_BIOSUM_VOLUME_ITEM.CFSND;
+
+            if (p_BIOSUM_VOLUME_ITEM.BFSND != null)
+                p_oRow["BFSND"] = p_BIOSUM_VOLUME_ITEM.BFSND;
+
+            if (p_BIOSUM_VOLUME_ITEM.PRECIPITATION != null)
+                p_oRow["PRECIPITATION"] = p_BIOSUM_VOLUME_ITEM.PRECIPITATION;
+
+            if (p_BIOSUM_VOLUME_ITEM.BALIVE != null)
+                p_oRow["BALIVE"] = p_BIOSUM_VOLUME_ITEM.BALIVE;
+            //END: ADDED BIOSUM_VOLUME COLUMNS
+
             p_oRow["TRE_CN"] = p_BIOSUM_VOLUME_ITEM.TRE_CN;
             p_oRow["PLT_CN"] = p_BIOSUM_VOLUME_ITEM.PLT_CN;
             p_oRow["CND_CN"] = p_BIOSUM_VOLUME_ITEM.CND_CN;
@@ -676,6 +732,62 @@ namespace FcsClassLibrary
                         if (_OracleADO.m_DataReader["TOTAGE"] != DBNull.Value)
                             oNew.TOTAGE = Convert.ToDouble(_OracleADO.m_DataReader["TOTAGE"]);
 
+                        //START: ADDED BIOSUM_VOLUME COLUMNS
+                        if (_OracleADO.m_DataReader["SITREE"] != DBNull.Value)
+                            oNew.SITREE = Convert.ToInt32(_OracleADO.m_DataReader["SITREE"]);
+
+                        if (_OracleADO.m_DataReader["WDLDSTEM"] != DBNull.Value)
+                            oNew.WDLDSTEM = Convert.ToInt32(_OracleADO.m_DataReader["WDLDSTEM"]);
+
+                        if (_OracleADO.m_DataReader["UPPER_DIA"] != DBNull.Value)
+                            oNew.UPPER_DIA = Convert.ToDouble(_OracleADO.m_DataReader["UPPER_DIA"]);
+
+                        if (_OracleADO.m_DataReader["UPPER_DIA_HT"] != DBNull.Value)
+                            oNew.UPPER_DIA_HT = Convert.ToDouble(_OracleADO.m_DataReader["UPPER_DIA_HT"]);
+
+                        if (_OracleADO.m_DataReader["CENTROID_DIA"] != DBNull.Value)
+                            oNew.CENTROID_DIA = Convert.ToDouble(_OracleADO.m_DataReader["CENTROID_DIA"]);
+
+                        if (_OracleADO.m_DataReader["CENTROID_DIA_HT_ACTUAL"] != DBNull.Value)
+                            oNew.CENTROID_DIA_HT_ACTUAL = Convert.ToDouble(_OracleADO.m_DataReader["CENTROID_DIA_HT_ACTUAL"]);
+
+                        if (_OracleADO.m_DataReader["SAWHT"] != DBNull.Value)
+                            oNew.SAWHT = Convert.ToInt32(_OracleADO.m_DataReader["SAWHT"]);
+
+                        if (_OracleADO.m_DataReader["HTDMP"] != DBNull.Value)
+                            oNew.HTDMP = Convert.ToDouble(_OracleADO.m_DataReader["HTDMP"]);
+
+                        if (_OracleADO.m_DataReader["BOLEHT"] != DBNull.Value)
+                            oNew.BOLEHT = Convert.ToInt32(_OracleADO.m_DataReader["BOLEHT"]);
+
+                        if (_OracleADO.m_DataReader["CULLCF"] != DBNull.Value)
+                            oNew.CULLCF = Convert.ToInt32(_OracleADO.m_DataReader["CULLCF"]);
+
+                        if (_OracleADO.m_DataReader["CULL_FLD"] != DBNull.Value)
+                            oNew.CULL_FLD = Convert.ToInt32(_OracleADO.m_DataReader["CULL_FLD"]);
+
+                        if (_OracleADO.m_DataReader["CULLDEAD"] != DBNull.Value)
+                            oNew.CULLDEAD = Convert.ToInt32(_OracleADO.m_DataReader["CULLDEAD"]);
+
+                        if (_OracleADO.m_DataReader["CULLFORM"] != DBNull.Value)
+                            oNew.CULLFORM = Convert.ToInt32(_OracleADO.m_DataReader["CULLFORM"]);
+
+                        if (_OracleADO.m_DataReader["CULLMSTOP"] != DBNull.Value)
+                            oNew.CULLMSTOP = Convert.ToInt32(_OracleADO.m_DataReader["CULLMSTOP"]);
+
+                        if (_OracleADO.m_DataReader["CFSND"] != DBNull.Value)
+                            oNew.CFSND = Convert.ToInt32(_OracleADO.m_DataReader["CFSND"]);
+
+                        if (_OracleADO.m_DataReader["BFSND"] != DBNull.Value)
+                            oNew.BFSND = Convert.ToInt32(_OracleADO.m_DataReader["BFSND"]);
+
+                        if (_OracleADO.m_DataReader["PRECIPITATION"] != DBNull.Value)
+                            oNew.PRECIPITATION = Convert.ToDouble(_OracleADO.m_DataReader["PRECIPITATION"]);
+
+                        if (_OracleADO.m_DataReader["BALIVE"] != DBNull.Value)
+                            oNew.BALIVE = Convert.ToDouble(_OracleADO.m_DataReader["BALIVE"]);
+                        //END: ADDED BIOSUM_VOLUME COLUMNS
+
                         oNew.TRE_CN =  _OracleADO.m_DataReader["TRE_CN"].ToString();
                         oNew.PLT_CN =  _OracleADO.m_DataReader["PLT_CN"].ToString();
                         oNew.CND_CN = _OracleADO.m_DataReader["CND_CN"].ToString();
@@ -713,6 +825,105 @@ namespace FcsClassLibrary
             if (oList.Count == 0) return null;
             else return oList;
 
+        }
+        public static void AddBiosumVolumeColumns(string p_strTempDir,string p_strAppDir,out string p_strBATFile)
+        {
+            p_strBATFile = "";
+            bool bFound = true;
+            string[,] strAlterCommands = 
+            {
+             {"SITREE","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD SITREE NUMBER(3,1);"},
+             {"WDLDSTEM","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD WDLDSTEM NUMBER(3);"},
+             {"UPPER_DIA","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD UPPER_DIA NUMBER(4,1);"},
+             {"UPPER_DIA_HT","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD UPPER_DIA_HT NUMBER(4,1);"},
+             {"CENTROID_DIA","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CENTROID_DIA NUMBER(4,1);"},
+             {"CENTROID_DIA_HT_ACTUAL","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CENTROID_DIA_HT_ACTUAL NUMBER(4,1);"},
+             {"SAWHT","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD SAWHT NUMBER(2);"},
+             {"HTDMP","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD HTDMP NUMBER(3,1);"},
+             {"BOLEHT","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD BOLEHT NUMBER(3);"},
+             {"CULL_FLD","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CULL_FLD NUMBER(2);"},
+             {"CULLDEAD","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CULLDEAD NUMBER(3);"},
+             {"CULLFORM","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CULLFORM NUMBER(3);"},
+             {"CULLMSTOP","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CULLMSTOP  NUMBER(3);"},
+             {"CFSND","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CFSND NUMBER(3);"},
+             {"BFSND","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD BFSND NUMBER(3);"},
+             {"PRECIPITATION","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD PRECIPITATION NUMBER;"},
+             {"BALIVE","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD BALIVE NUMBER(9,4);"},
+             {"CULLCF","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CULLCF  NUMBER(3);"},
+
+            };
+            Oracle.ADO.FCSOracle fcs = new Oracle.ADO.FCSOracle();
+            string strConn = fcs.getOracleConnString("XE", "fcs_biosum", "fcs");
+            fcs.DisplayErrors = false;
+            fcs.OpenConnection(strConn);
+            if (fcs.m_intError == 0)
+            {
+
+                string strColumns = fcs.getFieldNames(fcs.m_Connection, "SELECT * FROM FCS_BIOSUM.BIOSUM_VOLUME WHERE 1=2");
+                fcs.CloseAndDisposeConnection(fcs.m_Connection, true);
+                if (strColumns != null && strColumns.Trim().Length > 0)
+                {
+                    strColumns = "," + strColumns + ",";
+                    for (int x = 0; x <= strAlterCommands.GetLength(0)-1; x++)
+                    {
+                        if (strColumns.ToUpper().IndexOf("," + strAlterCommands[x, 0] + ",", 0) < 0)
+                        {
+                            bFound = false;
+                        }
+                        else
+                        {
+                            strAlterCommands[x, 0] = "FOUND";
+                        }
+                    }
+                    if (!bFound)
+                    {
+                        string strFile = p_strTempDir + @"\FCS_BIOSUM_ModifyBiomassColumns.SQL";
+                        if (System.IO.File.Exists(strFile)) System.IO.File.Delete(strFile);
+                        System.Threading.Thread.Sleep(1000);
+                        WriteText(strFile, "CONNECT FCS_BIOSUM/fcs;\r\n");
+                        WriteText(strFile, "WHENEVER SQLERROR CONTINUE NONE\r\n");
+                        WriteText(strFile, "DELETE FROM FCS_BIOSUM.BIOSUM_VOLUME;\r\n");
+                        WriteText(strFile, "COMMIT;\r\n");
+                        for (int x = 0; x <= strAlterCommands.GetLength(0)-1; x++)
+                        {
+                            if (strAlterCommands[x, 0] != "FOUND")
+                            {
+                                WriteText(strFile, strAlterCommands[x, 1] + "\r\n");
+                            }
+
+                        }
+                        WriteText(strFile, "COMMIT;\r\n");
+                        WriteText(strFile, "EXIT\r\n");
+                        System.Threading.Thread.Sleep(1000);
+
+                        p_strBATFile = p_strTempDir + @"\FCS_BIOSUM_ModifyBiomassColumns.BAT";
+                        System.IO.File.Copy(p_strAppDir + "\\db\\FCS_BIOSUM_ModifyBiomassColumns.BAT", p_strBATFile, true);
+                    }
+                }
+            }
+
+            fcs = null;
+        }
+        private static void WriteText(string p_strTextFile, string p_strText)
+        {
+            System.IO.FileStream oTextFileStream;
+            System.IO.StreamWriter oTextStreamWriter;
+
+            if (!System.IO.File.Exists(p_strTextFile))
+            {
+                oTextFileStream = new System.IO.FileStream(p_strTextFile, System.IO.FileMode.Create,
+                    System.IO.FileAccess.Write);
+            }
+            else
+            {
+                oTextFileStream = new System.IO.FileStream(p_strTextFile, System.IO.FileMode.Append,
+                    System.IO.FileAccess.Write);
+            }
+
+            oTextStreamWriter = new System.IO.StreamWriter(oTextFileStream);
+            oTextStreamWriter.Write(p_strText);
+            oTextStreamWriter.Close();
+            oTextFileStream.Close();
         }
 
 
@@ -906,7 +1117,99 @@ namespace FcsClassLibrary
             set;
         }
 
-    
+        //START: ADDED BIOSUM_VOLUME COLUMNS
+        public virtual global::System.Nullable<int> SITREE
+        {
+            get;
+            set;
+        }
+        public virtual global::System.Nullable<int> WDLDSTEM
+        {
+            get;
+            set;
+        }
+        public virtual global::System.Nullable<double> UPPER_DIA
+        {
+            get;
+            set;
+        }
+        public virtual global::System.Nullable<double> UPPER_DIA_HT
+        {
+            get;
+            set;
+        }
+        public virtual global::System.Nullable<double> CENTROID_DIA
+        {
+            get;
+            set;
+        }
+        public virtual global::System.Nullable<double> CENTROID_DIA_HT_ACTUAL
+        {
+            get;
+            set;
+        }
+        public virtual global::System.Nullable<int> SAWHT
+        {
+            get;
+            set;
+        }
+        public virtual global::System.Nullable<double> HTDMP
+        {
+            get;
+            set;
+        }
+        public virtual global::System.Nullable<int> BOLEHT
+        {
+            get;
+            set;
+        }
+        public virtual global::System.Nullable<int> CULLCF
+        {
+            get;
+            set;
+        }
+        public virtual global::System.Nullable<int> CULL_FLD
+        {
+            get;
+            set;
+        }
+        public virtual global::System.Nullable<int> CULLDEAD
+        {
+            get;
+            set;
+        }
+        public virtual global::System.Nullable<int> CULLFORM
+        {
+            get;
+            set;
+        }
+        public virtual global::System.Nullable<int> CULLMSTOP
+        {
+            get;
+            set;
+        }
+        public virtual global::System.Nullable<int> CFSND
+        {
+            get;
+            set;
+        }
+        public virtual global::System.Nullable<int> BFSND
+        {
+            get;
+            set;
+        }
+        public virtual global::System.Nullable<double> PRECIPITATION
+        {
+            get;
+            set;
+        }
+        public virtual global::System.Nullable<double> BALIVE
+        {
+            get;
+            set;
+        }
+        //END: ADDED BIOSUM_VOLUME COLUMNS
+
         /// <summary>
         /// There are no comments for TRE_CN in the schema.
         /// </summary>

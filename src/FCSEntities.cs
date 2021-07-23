@@ -578,6 +578,27 @@ namespace FcsClassLibrary
 
             if (p_BIOSUM_VOLUME_ITEM.BALIVE != null)
                 p_oRow["BALIVE"] = p_BIOSUM_VOLUME_ITEM.BALIVE;
+
+            if (p_BIOSUM_VOLUME_ITEM.DIAHTCD != null)
+                p_oRow["DIAHTCD"] = p_BIOSUM_VOLUME_ITEM.DIAHTCD;
+
+            if (p_BIOSUM_VOLUME_ITEM.STANDING_DEAD_CD != null)
+                p_oRow["STANDING_DEAD_CD"] = p_BIOSUM_VOLUME_ITEM.STANDING_DEAD_CD;
+
+            if (p_BIOSUM_VOLUME_ITEM.VOLCFSND_CALC != null)
+                p_oRow["VOLCFSND_CALC"] = p_BIOSUM_VOLUME_ITEM.VOLCFSND_CALC;
+
+            if (p_BIOSUM_VOLUME_ITEM.DRYBIO_BOLE_CALC != null)
+                p_oRow["DRYBIO_BOLE_CALC"] = p_BIOSUM_VOLUME_ITEM.DRYBIO_BOLE_CALC;
+
+            if (p_BIOSUM_VOLUME_ITEM.DRYBIO_TOP_CALC != null)
+                p_oRow["DRYBIO_TOP_CALC"] = p_BIOSUM_VOLUME_ITEM.DRYBIO_TOP_CALC;
+
+            if (p_BIOSUM_VOLUME_ITEM.DRYBIO_SAPLING_CALC != null)
+                p_oRow["DRYBIO_SAPLING_CALC"] = p_BIOSUM_VOLUME_ITEM.DRYBIO_SAPLING_CALC;
+
+            if (p_BIOSUM_VOLUME_ITEM.DRYBIO_WDLD_SPP_CALC != null)
+                p_oRow["DRYBIO_WDLD_SPP_CALC"] = p_BIOSUM_VOLUME_ITEM.DRYBIO_WDLD_SPP_CALC;
             //END: ADDED BIOSUM_VOLUME COLUMNS
 
             p_oRow["TRE_CN"] = p_BIOSUM_VOLUME_ITEM.TRE_CN;
@@ -786,6 +807,27 @@ namespace FcsClassLibrary
 
                         if (_OracleADO.m_DataReader["BALIVE"] != DBNull.Value)
                             oNew.BALIVE = Convert.ToDouble(_OracleADO.m_DataReader["BALIVE"]);
+
+                        if (_OracleADO.m_DataReader["DIAHTCD"] != DBNull.Value)
+                            oNew.DIAHTCD = Convert.ToInt32(_OracleADO.m_DataReader["DIAHTCD"]);
+
+                        if (_OracleADO.m_DataReader["STANDING_DEAD_CD"] != DBNull.Value)
+                            oNew.STANDING_DEAD_CD = Convert.ToInt32(_OracleADO.m_DataReader["STANDING_DEAD_CD"]);
+
+                        if (_OracleADO.m_DataReader["VOLCFSND_CALC"] != DBNull.Value)
+                            oNew.VOLCFSND_CALC = Convert.ToDouble(_OracleADO.m_DataReader["VOLCFSND_CALC"]);
+
+                        if (_OracleADO.m_DataReader["DRYBIO_BOLE_CALC"] != DBNull.Value)
+                            oNew.DRYBIO_BOLE_CALC = Convert.ToDouble(_OracleADO.m_DataReader["DRYBIO_BOLE_CALC"]);
+
+                        if (_OracleADO.m_DataReader["DRYBIO_TOP_CALC"] != DBNull.Value)
+                            oNew.DRYBIO_TOP_CALC = Convert.ToDouble(_OracleADO.m_DataReader["DRYBIO_TOP_CALC"]);
+
+                        if (_OracleADO.m_DataReader["DRYBIO_SAPLING_CALC"] != DBNull.Value)
+                            oNew.DRYBIO_SAPLING_CALC = Convert.ToDouble(_OracleADO.m_DataReader["DRYBIO_SAPLING_CALC"]);
+
+                        if (_OracleADO.m_DataReader["DRYBIO_WDLD_SPP_CALC"] != DBNull.Value)
+                            oNew.DRYBIO_WDLD_SPP_CALC = Convert.ToDouble(_OracleADO.m_DataReader["DRYBIO_WDLD_SPP_CALC"]);
                         //END: ADDED BIOSUM_VOLUME COLUMNS
 
                         oNew.TRE_CN =  _OracleADO.m_DataReader["TRE_CN"].ToString();
@@ -850,6 +892,13 @@ namespace FcsClassLibrary
              {"PRECIPITATION","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD PRECIPITATION NUMBER;"},
              {"BALIVE","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD BALIVE NUMBER(9,4);"},
              {"CULLCF","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CULLCF  NUMBER(3);"},
+             {"DIAHTCD", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD DIAHTCD NUMBER(1);"},
+             {"STANDING_DEAD_CD", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD STANDING_DEAD_CD NUMBER(1);"},
+             {"VOLCFSND_CALC", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD VOLCFSND_CALC NUMBER(13,6);"},
+             {"DRYBIO_BOLE_CALC", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD DRYBIO_BOLE_CALC NUMBER(13,6);"},
+             {"DRYBIO_TOP_CALC", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD DRYBIO_TOP_CALC NUMBER(13,6);"},
+             {"DRYBIO_SAPLING_CALC", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD DRYBIO_SAPLING_CALC NUMBER(13,6);"},
+             {"DRYBIO_WDLD_SPP_CALC", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD DRYBIO_WDLD_SPP_CALC NUMBER(13,6);"}
 
             };
             Oracle.ADO.FCSOracle fcs = new Oracle.ADO.FCSOracle();
@@ -1204,6 +1253,48 @@ namespace FcsClassLibrary
             set;
         }
         public virtual global::System.Nullable<double> BALIVE
+        {
+            get;
+            set;
+        }
+
+        public virtual global::System.Nullable<int> DIAHTCD
+        {
+            get;
+            set;
+        }
+
+        public virtual global::System.Nullable<int> STANDING_DEAD_CD
+        {
+            get;
+            set;
+        }
+
+        public virtual global::System.Nullable<double> VOLCFSND_CALC
+        {
+            get;
+            set;
+        }
+
+        public virtual global::System.Nullable<double> DRYBIO_BOLE_CALC
+        {
+            get;
+            set;
+        }
+
+        public virtual global::System.Nullable<double> DRYBIO_TOP_CALC
+        {
+            get;
+            set;
+        }
+
+        public virtual global::System.Nullable<double> DRYBIO_SAPLING_CALC
+        {
+            get;
+            set;
+        }
+
+        public virtual global::System.Nullable<double> DRYBIO_WDLD_SPP_CALC
         {
             get;
             set;

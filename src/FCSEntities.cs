@@ -605,6 +605,9 @@ namespace FcsClassLibrary
 
             if (p_BIOSUM_VOLUME_ITEM.SUBP != null)
                 p_oRow["SUBP"] = p_BIOSUM_VOLUME_ITEM.SUBP;
+
+            if (p_BIOSUM_VOLUME_ITEM.FORMCL != null)
+                p_oRow["FORMCL"] = p_BIOSUM_VOLUME_ITEM.FORMCL;
             //END: ADDED BIOSUM_VOLUME COLUMNS
 
             p_oRow["TRE_CN"] = p_BIOSUM_VOLUME_ITEM.TRE_CN;
@@ -903,6 +906,7 @@ namespace FcsClassLibrary
                 {"DRYBIO_SAPLING_CALC", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD DRYBIO_SAPLING_CALC NUMBER(13,6);"},
                 {"DRYBIO_TOP_CALC", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD DRYBIO_TOP_CALC NUMBER(13,6);"},
                 {"DRYBIO_WDLD_SPP_CALC", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD DRYBIO_WDLD_SPP_CALC NUMBER(13,6);"},
+                {"FORMCL", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD FORMCL NUMBER(1);"},
                 {"HTDMP", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD HTDMP NUMBER(3,1);"},
                 {"PRECIPITATION", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD PRECIPITATION NUMBER;"},
                 {"SAWHT", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD SAWHT NUMBER(2);"},
@@ -1035,6 +1039,7 @@ namespace FcsClassLibrary
         public virtual double? DRYBIO_WDLD_SPP_CALC { get; set; }
         public virtual double? DRYBIOM_CALC { get; set; }
         public virtual double? DRYBIOT_CALC { get; set; }
+        public virtual byte? FORMCL { get; set; }
         public virtual int? HT { get; set; }
         public virtual double? HTDMP { get; set; }
         public virtual int INVYR { get; set; }

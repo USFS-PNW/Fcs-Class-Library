@@ -578,6 +578,36 @@ namespace FcsClassLibrary
 
             if (p_BIOSUM_VOLUME_ITEM.BALIVE != null)
                 p_oRow["BALIVE"] = p_BIOSUM_VOLUME_ITEM.BALIVE;
+
+            if (p_BIOSUM_VOLUME_ITEM.DIAHTCD != null)
+                p_oRow["DIAHTCD"] = p_BIOSUM_VOLUME_ITEM.DIAHTCD;
+
+            if (p_BIOSUM_VOLUME_ITEM.STANDING_DEAD_CD != null)
+                p_oRow["STANDING_DEAD_CD"] = p_BIOSUM_VOLUME_ITEM.STANDING_DEAD_CD;
+
+            if (p_BIOSUM_VOLUME_ITEM.VOLCFSND_CALC != null)
+                p_oRow["VOLCFSND_CALC"] = p_BIOSUM_VOLUME_ITEM.VOLCFSND_CALC;
+
+            if (p_BIOSUM_VOLUME_ITEM.DRYBIO_BOLE_CALC != null)
+                p_oRow["DRYBIO_BOLE_CALC"] = p_BIOSUM_VOLUME_ITEM.DRYBIO_BOLE_CALC;
+
+            if (p_BIOSUM_VOLUME_ITEM.DRYBIO_TOP_CALC != null)
+                p_oRow["DRYBIO_TOP_CALC"] = p_BIOSUM_VOLUME_ITEM.DRYBIO_TOP_CALC;
+
+            if (p_BIOSUM_VOLUME_ITEM.DRYBIO_SAPLING_CALC != null)
+                p_oRow["DRYBIO_SAPLING_CALC"] = p_BIOSUM_VOLUME_ITEM.DRYBIO_SAPLING_CALC;
+
+            if (p_BIOSUM_VOLUME_ITEM.DRYBIO_WDLD_SPP_CALC != null)
+                p_oRow["DRYBIO_WDLD_SPP_CALC"] = p_BIOSUM_VOLUME_ITEM.DRYBIO_WDLD_SPP_CALC;
+
+            if (p_BIOSUM_VOLUME_ITEM.CULLBF != null)
+                p_oRow["CULLBF"] = p_BIOSUM_VOLUME_ITEM.CULLBF;
+
+            if (p_BIOSUM_VOLUME_ITEM.SUBP != null)
+                p_oRow["SUBP"] = p_BIOSUM_VOLUME_ITEM.SUBP;
+
+            if (p_BIOSUM_VOLUME_ITEM.FORMCL != null)
+                p_oRow["FORMCL"] = p_BIOSUM_VOLUME_ITEM.FORMCL;
             //END: ADDED BIOSUM_VOLUME COLUMNS
 
             p_oRow["TRE_CN"] = p_BIOSUM_VOLUME_ITEM.TRE_CN;
@@ -786,6 +816,33 @@ namespace FcsClassLibrary
 
                         if (_OracleADO.m_DataReader["BALIVE"] != DBNull.Value)
                             oNew.BALIVE = Convert.ToDouble(_OracleADO.m_DataReader["BALIVE"]);
+
+                        if (_OracleADO.m_DataReader["DIAHTCD"] != DBNull.Value)
+                            oNew.DIAHTCD = Convert.ToInt32(_OracleADO.m_DataReader["DIAHTCD"]);
+
+                        if (_OracleADO.m_DataReader["STANDING_DEAD_CD"] != DBNull.Value)
+                            oNew.STANDING_DEAD_CD = Convert.ToInt32(_OracleADO.m_DataReader["STANDING_DEAD_CD"]);
+
+                        if (_OracleADO.m_DataReader["VOLCFSND_CALC"] != DBNull.Value)
+                            oNew.VOLCFSND_CALC = Convert.ToDouble(_OracleADO.m_DataReader["VOLCFSND_CALC"]);
+
+                        if (_OracleADO.m_DataReader["DRYBIO_BOLE_CALC"] != DBNull.Value)
+                            oNew.DRYBIO_BOLE_CALC = Convert.ToDouble(_OracleADO.m_DataReader["DRYBIO_BOLE_CALC"]);
+
+                        if (_OracleADO.m_DataReader["DRYBIO_TOP_CALC"] != DBNull.Value)
+                            oNew.DRYBIO_TOP_CALC = Convert.ToDouble(_OracleADO.m_DataReader["DRYBIO_TOP_CALC"]);
+
+                        if (_OracleADO.m_DataReader["DRYBIO_SAPLING_CALC"] != DBNull.Value)
+                            oNew.DRYBIO_SAPLING_CALC = Convert.ToDouble(_OracleADO.m_DataReader["DRYBIO_SAPLING_CALC"]);
+
+                        if (_OracleADO.m_DataReader["DRYBIO_WDLD_SPP_CALC"] != DBNull.Value)
+                            oNew.DRYBIO_WDLD_SPP_CALC = Convert.ToDouble(_OracleADO.m_DataReader["DRYBIO_WDLD_SPP_CALC"]);
+
+                        if (_OracleADO.m_DataReader["CULLBF"] != DBNull.Value)
+                            oNew.CULLBF = Convert.ToInt32(_OracleADO.m_DataReader["CULLBF"]);
+
+                        if (_OracleADO.m_DataReader["SUBP"] != DBNull.Value)
+                            oNew.SUBP = Convert.ToByte(_OracleADO.m_DataReader["SUBP"]);
                         //END: ADDED BIOSUM_VOLUME COLUMNS
 
                         oNew.TRE_CN =  _OracleADO.m_DataReader["TRE_CN"].ToString();
@@ -830,27 +887,36 @@ namespace FcsClassLibrary
         {
             p_strBATFile = "";
             bool bFound = true;
-            string[,] strAlterCommands = 
+            string[,] strAlterCommands =
             {
-             {"SITREE","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD SITREE NUMBER(3,1);"},
-             {"WDLDSTEM","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD WDLDSTEM NUMBER(3);"},
-             {"UPPER_DIA","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD UPPER_DIA NUMBER(4,1);"},
-             {"UPPER_DIA_HT","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD UPPER_DIA_HT NUMBER(4,1);"},
-             {"CENTROID_DIA","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CENTROID_DIA NUMBER(4,1);"},
-             {"CENTROID_DIA_HT_ACTUAL","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CENTROID_DIA_HT_ACTUAL NUMBER(4,1);"},
-             {"SAWHT","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD SAWHT NUMBER(2);"},
-             {"HTDMP","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD HTDMP NUMBER(3,1);"},
-             {"BOLEHT","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD BOLEHT NUMBER(3);"},
-             {"CULL_FLD","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CULL_FLD NUMBER(2);"},
-             {"CULLDEAD","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CULLDEAD NUMBER(3);"},
-             {"CULLFORM","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CULLFORM NUMBER(3);"},
-             {"CULLMSTOP","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CULLMSTOP  NUMBER(3);"},
-             {"CFSND","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CFSND NUMBER(3);"},
-             {"BFSND","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD BFSND NUMBER(3);"},
-             {"PRECIPITATION","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD PRECIPITATION NUMBER;"},
-             {"BALIVE","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD BALIVE NUMBER(9,4);"},
-             {"CULLCF","ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CULLCF  NUMBER(3);"},
-
+                {"BALIVE", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD BALIVE NUMBER(9,4);"},
+                {"BFSND", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD BFSND NUMBER(3);"},
+                {"BOLEHT", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD BOLEHT NUMBER(3);"},
+                {"CENTROID_DIA", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CENTROID_DIA NUMBER(4,1);"},
+                {"CENTROID_DIA_HT_ACTUAL", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CENTROID_DIA_HT_ACTUAL NUMBER(4,1);"},
+                {"CFSND", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CFSND NUMBER(3);"},
+                {"CULLBF", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CULLBF NUMBER(3);"},
+                {"CULLCF", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CULLCF NUMBER(3);"},
+                {"CULLDEAD", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CULLDEAD NUMBER(3);"},
+                {"CULLFORM", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CULLFORM NUMBER(3);"},
+                {"CULLMSTOP", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CULLMSTOP NUMBER(3);"},
+                {"CULL_FLD", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD CULL_FLD NUMBER(2);"},
+                {"DIAHTCD", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD DIAHTCD NUMBER(1);"},
+                {"DRYBIO_BOLE_CALC", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD DRYBIO_BOLE_CALC NUMBER(13,6);"},
+                {"DRYBIO_SAPLING_CALC", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD DRYBIO_SAPLING_CALC NUMBER(13,6);"},
+                {"DRYBIO_TOP_CALC", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD DRYBIO_TOP_CALC NUMBER(13,6);"},
+                {"DRYBIO_WDLD_SPP_CALC", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD DRYBIO_WDLD_SPP_CALC NUMBER(13,6);"},
+                {"FORMCL", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD FORMCL NUMBER(1);"},
+                {"HTDMP", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD HTDMP NUMBER(3,1);"},
+                {"PRECIPITATION", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD PRECIPITATION NUMBER;"},
+                {"SAWHT", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD SAWHT NUMBER(2);"},
+                {"SITREE", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD SITREE NUMBER(3,1);"},
+                {"STANDING_DEAD_CD", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD STANDING_DEAD_CD NUMBER(1);"},
+                {"SUBP", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD SUBP NUMBER(1);"},
+                {"UPPER_DIA", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD UPPER_DIA NUMBER(4,1);"},
+                {"UPPER_DIA_HT", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD UPPER_DIA_HT NUMBER(4,1);"},
+                {"VOLCFSND_CALC", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD VOLCFSND_CALC NUMBER(13,6);"},
+                {"WDLDSTEM", "ALTER TABLE FCS_BIOSUM.BIOSUM_VOLUME ADD WDLDSTEM NUMBER(3);"},
             };
             Oracle.ADO.FCSOracle fcs = new Oracle.ADO.FCSOracle();
             string strConn = fcs.getOracleConnString("XE", "fcs_biosum", "fcs");
@@ -947,359 +1013,60 @@ namespace FcsClassLibrary
         }
 
         #region Properties
-    
-        /// <summary>
-        /// There are no comments for STATECD in the schema.
-        /// </summary>
-        public virtual int STATECD
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for COUNTYCD in the schema.
-        /// </summary>
-        public virtual int COUNTYCD
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for PLOT in the schema.
-        /// </summary>
-        public virtual int PLOT
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for INVYR in the schema.
-        /// </summary>
-        public virtual int INVYR
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for TREE in the schema.
-        /// </summary>
-        public virtual int TREE
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for VOL_LOC_GRP in the schema.
-        /// </summary>
-        public virtual string VOL_LOC_GRP
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for SPCD in the schema.
-        /// </summary>
-        public virtual global::System.Nullable<decimal> SPCD
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for DIA in the schema.
-        /// </summary>
-        public virtual global::System.Nullable<double> DIA
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for HT in the schema.
-        /// </summary>
-        public virtual global::System.Nullable<int> HT
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for ACTUALHT in the schema.
-        /// </summary>
-        public virtual global::System.Nullable<int> ACTUALHT
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for CR in the schema.
-        /// </summary>
-        public virtual global::System.Nullable<int> CR
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for STATUSCD in the schema.
-        /// </summary>
-        public virtual short STATUSCD
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for DECAYCD in the schema.
-        /// </summary>
-        public virtual global::System.Nullable<int> DECAYCD
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for TREECLCD in the schema.
-        /// </summary>
-        public virtual global::System.Nullable<int> TREECLCD
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for ROUGHCULL in the schema.
-        /// </summary>
-        public virtual global::System.Nullable<int> ROUGHCULL
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for CULL in the schema.
-        /// </summary>
-        public virtual global::System.Nullable<int> CULL
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for TOTAGE in the schema.
-        /// </summary>
-        public virtual global::System.Nullable<double> TOTAGE
-        {
-            get;
-            set;
-        }
-
-        //START: ADDED BIOSUM_VOLUME COLUMNS
-        public virtual global::System.Nullable<int> SITREE
-        {
-            get;
-            set;
-        }
-        public virtual global::System.Nullable<int> WDLDSTEM
-        {
-            get;
-            set;
-        }
-        public virtual global::System.Nullable<double> UPPER_DIA
-        {
-            get;
-            set;
-        }
-        public virtual global::System.Nullable<double> UPPER_DIA_HT
-        {
-            get;
-            set;
-        }
-        public virtual global::System.Nullable<double> CENTROID_DIA
-        {
-            get;
-            set;
-        }
-        public virtual global::System.Nullable<double> CENTROID_DIA_HT_ACTUAL
-        {
-            get;
-            set;
-        }
-        public virtual global::System.Nullable<int> SAWHT
-        {
-            get;
-            set;
-        }
-        public virtual global::System.Nullable<double> HTDMP
-        {
-            get;
-            set;
-        }
-        public virtual global::System.Nullable<int> BOLEHT
-        {
-            get;
-            set;
-        }
-        public virtual global::System.Nullable<int> CULLCF
-        {
-            get;
-            set;
-        }
-        public virtual global::System.Nullable<int> CULL_FLD
-        {
-            get;
-            set;
-        }
-        public virtual global::System.Nullable<int> CULLDEAD
-        {
-            get;
-            set;
-        }
-        public virtual global::System.Nullable<int> CULLFORM
-        {
-            get;
-            set;
-        }
-        public virtual global::System.Nullable<int> CULLMSTOP
-        {
-            get;
-            set;
-        }
-        public virtual global::System.Nullable<int> CFSND
-        {
-            get;
-            set;
-        }
-        public virtual global::System.Nullable<int> BFSND
-        {
-            get;
-            set;
-        }
-        public virtual global::System.Nullable<double> PRECIPITATION
-        {
-            get;
-            set;
-        }
-        public virtual global::System.Nullable<double> BALIVE
-        {
-            get;
-            set;
-        }
-        //END: ADDED BIOSUM_VOLUME COLUMNS
-
-        /// <summary>
-        /// There are no comments for TRE_CN in the schema.
-        /// </summary>
-        public virtual string TRE_CN
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for PLT_CN in the schema.
-        /// </summary>
-        public virtual string PLT_CN
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for CND_CN in the schema.
-        /// </summary>
-        public virtual string CND_CN
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for VOLCFGRS_CALC in the schema.
-        /// </summary>
-        public virtual global::System.Nullable<double> VOLCFGRS_CALC
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for VOLCSGRS_CALC in the schema.
-        /// </summary>
-        public virtual global::System.Nullable<double> VOLCSGRS_CALC
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for VOLCFNET_CALC in the schema.
-        /// </summary>
-        public virtual global::System.Nullable<double> VOLCFNET_CALC
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for DRYBIOM_CALC in the schema.
-        /// </summary>
-        public virtual global::System.Nullable<double> DRYBIOM_CALC
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for DRYBIOT_CALC in the schema.
-        /// </summary>
-        public virtual global::System.Nullable<double> DRYBIOT_CALC
-        {
-            get;
-            set;
-        }
-
-    
-        /// <summary>
-        /// There are no comments for VOLTSGRS_CALC in the schema.
-        /// </summary>
-        public virtual global::System.Nullable<double> VOLTSGRS_CALC
-        {
-            get;
-            set;
-        }
-
-
+        public virtual int? ACTUALHT { get; set; }
+        public virtual double? BALIVE { get; set; }
+        public virtual int? BFSND { get; set; }
+        public virtual int? BOLEHT { get; set; }
+        public virtual double? CENTROID_DIA { get; set; }
+        public virtual double? CENTROID_DIA_HT_ACTUAL { get; set; }
+        public virtual int? CFSND { get; set; }
+        public virtual string CND_CN { get; set; }
+        public virtual int COUNTYCD { get; set; }
+        public virtual int? CR { get; set; }
+        public virtual int? CULL { get; set; }
+        public virtual int? CULL_FLD { get; set; }
+        public virtual int? CULLBF { get; set; }
+        public virtual int? CULLCF { get; set; }
+        public virtual int? CULLDEAD { get; set; }
+        public virtual int? CULLFORM { get; set; }
+        public virtual int? CULLMSTOP { get; set; }
+        public virtual int? DECAYCD { get; set; }
+        public virtual double? DIA { get; set; }
+        public virtual int? DIAHTCD { get; set; }
+        public virtual double? DRYBIO_BOLE_CALC { get; set; }
+        public virtual double? DRYBIO_SAPLING_CALC { get; set; }
+        public virtual double? DRYBIO_TOP_CALC { get; set; }
+        public virtual double? DRYBIO_WDLD_SPP_CALC { get; set; }
+        public virtual double? DRYBIOM_CALC { get; set; }
+        public virtual double? DRYBIOT_CALC { get; set; }
+        public virtual byte? FORMCL { get; set; }
+        public virtual int? HT { get; set; }
+        public virtual double? HTDMP { get; set; }
+        public virtual int INVYR { get; set; }
+        public virtual int PLOT { get; set; }
+        public virtual string PLT_CN { get; set; }
+        public virtual double? PRECIPITATION { get; set; }
+        public virtual int? ROUGHCULL { get; set; }
+        public virtual int? SAWHT { get; set; }
+        public virtual int? SITREE { get; set; }
+        public virtual decimal? SPCD { get; set; }
+        public virtual int? STANDING_DEAD_CD { get; set; }
+        public virtual int STATECD { get; set; }
+        public virtual short STATUSCD { get; set; }
+        public virtual byte? SUBP { get; set; }
+        public virtual double? TOTAGE { get; set; }
+        public virtual string TRE_CN { get; set; }
+        public virtual int TREE { get; set; }
+        public virtual int? TREECLCD { get; set; }
+        public virtual double? UPPER_DIA { get; set; }
+        public virtual double? UPPER_DIA_HT { get; set; }
+        public virtual string VOL_LOC_GRP { get; set; }
+        public virtual double? VOLCFGRS_CALC { get; set; }
+        public virtual double? VOLCFNET_CALC { get; set; }
+        public virtual double? VOLCFSND_CALC { get; set; }
+        public virtual double? VOLCSGRS_CALC { get; set; }
+        public virtual double? VOLTSGRS_CALC { get; set; }
+        public virtual int? WDLDSTEM { get; set; }
         #endregion
     }
 

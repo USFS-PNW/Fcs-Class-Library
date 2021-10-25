@@ -963,7 +963,7 @@ namespace FcsClassLibrary
                         System.Threading.Thread.Sleep(1000);
 
                         p_strBATFile = p_strTempDir + @"\FCS_BIOSUM_ModifyBiomassColumns.BAT";
-                        System.IO.File.Copy(p_strAppDir + "\\db\\FCS_BIOSUM_ModifyBiomassColumns.BAT", p_strBATFile, true);
+                        System.IO.File.Copy(p_strAppDir + "\\fcs\\FCS_BIOSUM_ModifyBiomassColumns.BAT", p_strBATFile, true);
                     }
                 }
             }
